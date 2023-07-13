@@ -11,7 +11,7 @@ int main(void)
     long int num2;
     float float_num;
     char chars;
-    long long num3;
+    long long int num3;
 
     printf("Size of a char: %lu byte(s)\n", (unsigned long )sizeof(chars));
     printf("Size of a int: %lu byte(s)\n", (unsigned long )sizeof(num));
