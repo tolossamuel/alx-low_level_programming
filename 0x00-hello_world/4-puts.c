@@ -3,7 +3,8 @@
  * batty style
  * return always 0
 */
-int main(){
+int main()
+{
     puts("Programming is like building a multilingual puzzle\n");
     return 0;
 }
