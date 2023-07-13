@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - print size
- * 
- * return: zero
- */
 int main(void)
 {
     int num;
