@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * prinf
+ * prinf - use printf
  *
  * Return: Always 0 (Success)
  */
