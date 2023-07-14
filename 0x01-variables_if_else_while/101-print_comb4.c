@@ -28,6 +28,6 @@ for (n = 48; n < 58; n++)
 		}
 	}
 }
-putchar(' ');
+putchar('\n');
 return (0);
 }
