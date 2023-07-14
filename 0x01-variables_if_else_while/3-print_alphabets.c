@@ -22,5 +22,6 @@ for (i = 0; i < 26; i++)
 	letter[i] = toupper(letter[i]);
 	putchar(letter[i]);
 }
+putchar('\n');
 return (0);
 }
