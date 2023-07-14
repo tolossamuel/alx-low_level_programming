@@ -15,7 +15,7 @@ int a;
 srand(time(NULL) ^ getpid());
 n = rand() - RAND_MAX / 2;
 a = n;
-while (a > 10)
+while (a > 10 || a < -10)
 {
 	a = a % 10;
 }
