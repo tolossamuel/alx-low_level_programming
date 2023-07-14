@@ -16,4 +16,5 @@ for (i = 0; i < 24; i++)
 {
 	putchar(letter[i]);
 }
+return (0);
 }
