@@ -14,13 +14,16 @@ for (n = 48; n < 58; n++)
 	{
 		for (l = 50; l < 58; l++)
 		{
-			putchar(n);
-			putchar(m);
-			putchar(l);
-			if (n != 55 || m != 56)
+			if (l > m && m > n)
 			{
-				putchar(44);
-				putchar(' ');
+				putchar(n);
+				putchar(m);
+				putchar(l);
+				if (n != 55 || m != 56)
+				{
+					putchar(44);
+					putchar(' ');
+				}
 			}
 		}
 	}
