@@ -1,11 +1,16 @@
-#include <stdio.h>
 #include "main.h"
+
 /**
- * main - print alphabets
- * Return: zero always
+ * print_alphabet - print alphabets
+ * Return: zero (0)
  */
-int main(void)
+void print_alphabet(void)
 {
-print_alphabet();
-return (0);
+char letter;
+
+for (letter = 97; letter < 123; letter++)
+{
+	_putchar(letter);
+}
+_putchar('\n');
 }
