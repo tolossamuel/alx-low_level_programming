@@ -7,9 +7,10 @@
  */
 int print_last_digit(int n)
 {
-while (n > 10)
+while (n > 10 || n < -10)
 {
 	n = n % 10;
 }
+n = n * 11;
 return (n);
 }
