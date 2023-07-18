@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * void jack_bauer - print evry minut
- * Return: zero (0)
+ * jack_bauer - print evry minut
+ * Return:
  */
 void jack_bauer(void)
 {
