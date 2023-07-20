@@ -12,17 +12,17 @@ void more_numbers(void)
 
 	for (z = 0; z < 10; z++)
 	{
-		y = 48;
-		for (i = 48; i < 53; i++)
+		y = 0;
+		for (i = 0; i < 14; i++)
 		{
-			if (i < 58)
+			if (i < 10)
 			{
-				_putchar("%d", i);
+				_putchar(i + '0');
 			}
 			else
 			{
-				_putchar("%d", 49);
-				_putchar('%d', y)
+				_putchar(1 + '0');
+				_putchar(y + '0');
 				y++;
 			}
 		}
