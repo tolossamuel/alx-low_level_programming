@@ -2,7 +2,6 @@
 
 /**
  * print_line - print line  in the terminal
- * use _ like line in ur code
  * @n: value for the length of line
  */
 void print_line(int n)
@@ -15,7 +14,7 @@ void print_line(int n)
 	}
 	else
 	{
-		for (i = 1; i < n; i++)
+		for (i = 1; i <= n; i++)
 		{
 			_putchar('_');
 		}
