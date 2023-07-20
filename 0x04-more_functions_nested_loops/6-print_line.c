@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_diagonal - print line  in the terminal
+ * print_line - print line  in the terminal
  * use _ like line in ur code
  * @n: value for the length of line
  */
-void print_diagonal(int n)
+void print_line(int n)
 {
 	int i;
 
