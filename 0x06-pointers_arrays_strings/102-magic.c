@@ -1,9 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - print the requested
- * Return: zero (0)
- */
 int main(void)
 {
 int n;
