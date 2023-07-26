@@ -1,8 +1,9 @@
 #include <stdio.h>
+
 /**
  * main - print 98
  * Return: zero (0)
-*/
+ */
 int main(void)
 {
 int n;
