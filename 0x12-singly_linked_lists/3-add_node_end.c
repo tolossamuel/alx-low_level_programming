@@ -9,8 +9,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *node_new;
-list_t *temp;
+list_t *node_new, *temp;
 size_t length_node;
 
 length_node = 0;
@@ -33,7 +32,7 @@ if (*head == NULL)
 }
 else
 {
-temp = *head
+temp = *head;
 while (temp->next != NULL)
 {
 	temp = temp->next;
