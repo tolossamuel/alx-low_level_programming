@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "samy.h"
+#include "lists.h"
 
 /**
  * print_list - print element of linked list
