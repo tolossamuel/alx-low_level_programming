@@ -23,9 +23,13 @@ if (node_new == NULL)
 {
 return (NULL);
 }
+node_new->str = strdup(str);
+node_new->len = length_node;
+node_new->next = NULL;
 if (*head == NULL)
 {
-node_new->next = NULL;
+*head = node_new->next;
+
 }
 else
 {
@@ -36,7 +40,5 @@ while (temp->next != NULL)
 }
 temp->next = node_new->next;
 }
-node_new->str = strdup(str);
-node_new->len = length_node;
 return (*head);
 }
