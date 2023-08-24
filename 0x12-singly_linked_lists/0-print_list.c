@@ -15,17 +15,17 @@ if (h == NULL)
 {
 	return (0);
 }
-while (h != NULL)
+while (h->next != NULL)
 {
 	if (h->str == NULL)
 	{
-		printf("[0] (nil)\n");
+		printf("[%d] %s\n", 0, "(nil)");
 	} else
 	{
 		printf("[%lu] %s\n", h->len, h->str);
 	}
 	h = h->next;
-	element++;
+	element += 1;
 }
 printf("[%lu] %s\n", h->len, h->str);
 return (element);
