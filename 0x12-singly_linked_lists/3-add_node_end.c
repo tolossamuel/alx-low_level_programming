@@ -27,7 +27,7 @@ node_new->len = length_node;
 node_new->next = NULL;
 if (*head == NULL)
 {
-*head = node_new->next;
+*head = node_new;
 
 }
 else
