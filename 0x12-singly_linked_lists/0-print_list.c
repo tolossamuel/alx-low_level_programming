@@ -13,12 +13,12 @@ size_t element;
 element = 0;
 while (h != NULL)
 {
-	if (h->str != NULL)
-	{
-		printf("[%lu] %s\n", h->len, h->str);
-	} else
+	if (h->str == NULL)
 	{
 		printf("[0] (nil)\n");
+	} else
+	{
+		printf("[%lu] %s\n", h->len, h->str);
 	}
 h = h->next;
 element++;
