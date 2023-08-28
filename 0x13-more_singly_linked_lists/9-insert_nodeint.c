@@ -27,15 +27,15 @@ for (index = 0; head != NULL && index < idx - 1; index++)
 	if (now == NULL)
 		return (NULL);
 }
-if (now->next)
-{
-	temp->next = now->next;
-	now->next = temp;
-}
-else if (idx == 0)
+if (idx == 0)
 {
 	temp->next = *head;
 	*head = temp;
+}
+else if (now->next)
+{
+	temp->next = now->next;
+	now->next = temp;
 }
 else
 {
