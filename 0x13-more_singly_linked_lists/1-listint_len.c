@@ -17,6 +17,10 @@ size_t listint_len(const listint_t *h)
 	}
 	while (h->next != null)
 	{
+		if (h->n == '\0')
+		{
+			continue;
+		}
 		counter++;
 		h = h->next;
 	}
