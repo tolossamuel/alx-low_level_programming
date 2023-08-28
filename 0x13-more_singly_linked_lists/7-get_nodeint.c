@@ -5,20 +5,14 @@
  * @head: pointer to the first node of the list
  * @index: no of node to access
  * Return: node at nth index OR NULL if node doesn't exist
-*/
+ */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	listint_t *tmp = head;
-	unsigned int i = 0;
+	unsigned int i;
 
-	if (head == NULL)
-	{
-		return (NULL);
-	}
 	for (i = 0; i < index && head != NULL; i++)
 	{
-		if (i == index)
-			temp = temp->next;
+		head = head->next;
 	}
-	return (temp);
+	return (head);
 }
