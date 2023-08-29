@@ -1,42 +1,40 @@
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index- a function that deletes the node at index
- * @head: pointer to the first node
- * @index: index of node
- * Return: 1 if it succeeded, -1 if it failed
-*/
+ * delete_nodeint_at_index - deletes the node at index
+ * of a linked list.
+ * @head: head of a list.
+ * @index: index of the list where the node is
+ * Return: 1 if it succeeded, -1 if it failed.
+ */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *new_node, *current;
-	unsigned int index;
+	unsigned int i;
+	listint_t *prev_node;
+	listint_t *next_node;
 
-	current = *head;
-	new_node = malloc(sizeof(listint_t));
-	if ((*head == NULL && idx != 0) || new_node == NULL)
-		return (NULL);
-	new_node->n = n;
-	for (index = 0; head != NULL && index < idx - 1; index++)
+	prev_node = *head;
+	if (index != 0)
 	{
-		current = current->next;
-		if (current == NULL)
-			return (NULL);
+		for (i = 0; i < index - 1 && prev_node != NULL; i++)
+		{
+			prev_node = prev_node->next;
+		}
 	}
-	if (idx == 0)
+	if (prev_node == NULL || (prev_node->next == NULL && index != 0))
 	{
-		new_node->next = *head;
-		*head = new_node;
+		return (-1);
 	}
-	else if (current->next)
+	next = prev_node->next;
+	if (index != 0)
 	{
-		new_node->next = current->next;
-		current->next = new_node;
+		prev_node->next = next_node->next;
+		free(next);
 	}
 	else
 	{
-		new_node->next = NULL;
-		current->next = new_node;
+		free(prev_node);
+		*head = next;
 	}
-
-	return (new_node);
+	return (1);
 }
