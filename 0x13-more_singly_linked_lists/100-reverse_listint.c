@@ -1,39 +1,24 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - that inserts new node at a given position.
+ * reverse_listint - function that reverses a listint_t linked list.
+ * You are not allowed to use malloc, free or arrays
+ * You can only declare a maximum of two variables in your function
  * @head: pointer to the first node
- * @idx: index of node
- * @n: value of new node
- * Return: the address of the new node, or NULL if it failed
+ * Return: pointer to the first node of the reversed list
  */
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
+listint_t *reverse_listint(listint_t **head)
 {
-listint_t *new_node = malloc(sizeof(listint_t));
+listint_t *prev = NULL;
+listint_t *next = NULL;
 
-if (new_node == NULL)
-	return (NULL);
-
-new_node->n = n;
-new_node->next = NULL;
-
-if (idx == 0)
+while (*head)
 {
-	new_node->next = *head;
-	*head = new_node;
+	next = *head->next;
+	*head->next = prev;
+	prev = *head;
+	*head = next;
 }
-else
-{
-	listint_t *tmp = *head;
-	unsigned int i = 0;
-
-	while (i < idx - 1)
-	{
-		tmp = tmp->next;
-		i++;
-	}
-	new_node->next = tmp->next;
-	tmp->next = new_node;
-}
-return (new_node);
+*head = prev;
+return (*head);
 }
