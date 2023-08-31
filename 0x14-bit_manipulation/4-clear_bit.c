@@ -12,14 +12,13 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int num;
 
-	if (index <= 63)
-	{
-		num = (1 << index);
-		if (n & num)
-		{
-			*n ^= num;
-		}
-		return (1);
-	}
-	return (-1);
+	if (index > 63)
+		return (-1);
+
+	num = 1 << index;
+
+	if (*n & num)
+		*n ^= num;
+
+	return (1);
 }
