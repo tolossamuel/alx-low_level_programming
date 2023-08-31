@@ -11,12 +11,14 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i = 0;
-
-	while (n != 0)
+	if (n >> 0)
 	{
+		if (n >> 1)
+			print_binary(n >> 1);
 		_putchar((n & 1) + '0');
-		n /= 2;
-		i++;
+	}
+	else
+	{
+		_putchar('0');
 	}
 }
