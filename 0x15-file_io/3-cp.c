@@ -52,37 +52,37 @@ void close_file(int fd)
  * Return: 0 on success.
  *
  * Description: If the argument count is incorrect - exit code 97.
- *              If file_source does not exist or cannot be read - exit code 98.
+ *              If file_from does not exist or cannot be read - exit code 98.
  *              If file_to cannot be created or written to - exit code 99.
- *              If file_to or file_source cannot be closed - exit code 100.
+ *              If file_to or file_from cannot be closed - exit code 100.
  */
 int main(int argc, char *argv[])
 {
-	int source, copy_to, read_file, write_file;
+	int from, to, r, w;
 	char *buffer;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_source filecopy_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
 	buffer = create_buffer(argv[2]);
-	source = open(argv[1], O_RDONLY);
-	read_file = read(source, buffer, 1024);
-	copy_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	from = open(argv[1], O_RDONLY);
+	r = read(from, buffer, 1024);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (source == -1 || r == -1)
+		if (from == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO,
-				"Error: Can't read source file %s\n", argv[1]);
+				"Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
 			exit(98);
 		}
 
-		write_file = write(copy_to, buffer, read_file);
-		if (copy_to == -1 || write_file == -1)
+		w = write(to, buffer, r);
+		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
@@ -90,14 +90,14 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		read_file = read(source, buffer, 1024);
-		copy_to = open(argv[2], O_WRONLY | O_APPEND);
+		r = read(from, buffer, 1024);
+		to = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (read_file > 0);
+	} while (r > 0);
 
 	free(buffer);
-	close_file(source);
-	close_file(copy_to);
+	close_file(from);
+	close_file(to);
 
 	return (0);
 }
