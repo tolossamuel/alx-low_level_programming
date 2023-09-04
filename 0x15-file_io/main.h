@@ -1,12 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/*
- * File: samuel.h
- * Auth: Samuel Tolossa
- * Desc: Header file containing prototypes for all functions
- */
-
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
